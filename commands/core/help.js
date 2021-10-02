@@ -12,8 +12,8 @@ module.exports = {
             message.channel.send({
                 embed: {
                     color: 'BLUE',
-                    author: { name: 'suck my ass' },
-                    footer: { text: 'This bot is fucking stupid' },
+                    author: { name: 'Tunez' },
+                    footer: { text: 'V2' },
                     fields: [
                         { name: 'Bot', value: infos },
                         { name: 'Music', value: music },
@@ -26,13 +26,13 @@ module.exports = {
         } else {
             const command = message.client.commands.get(args.join(" ").toLowerCase()) || message.client.commands.find(x => x.aliases && x.aliases.includes(args.join(" ").toLowerCase()));
 
-            if (!command) return message.channel.send(`${client.emotes.error} - I did not find this command !`);
+            if (!command) return message.channel.send(`${client.emotes.error} - I could not find that command!`);
 
             message.channel.send({
                 embed: {
                     color: 'BLUE',
-                    author: { name: 'suck my ass' },
-                    footer: { text: 'This bot is fucking stupid' },
+                    author: { name: 'Tunez' },
+                    footer: { text: 'V2' },
                     fields: [
                         { name: 'Name', value: command.name, inline: true },
                         { name: 'Category', value: command.category, inline: true },
