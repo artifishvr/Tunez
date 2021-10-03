@@ -13,5 +13,7 @@ module.exports = {
 
         client.player.play(message, args.join(" "), { firstResult: true });
         console.log("Playing " + args.join(" "))
-    },
+    }, catch (error) {
+        console.error(error);
+      }
 };

@@ -16,6 +16,6 @@ module.exports = (client, error, message, ...args) => {
             message.channel.send(`The music is starting... please wait and retry!`);
             break;
         default:
-            message.channel.send(`${client.emotes.error} - Something went wrong ... Error : ${error}`);
+            message.channel.send(`${client.emotes.error} - Something went wrong ...  ${error} \n Nag artificialbutter#0001 about this`);
     };
 };
