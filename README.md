@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-<img src="/tunez.png"  alt="Logo">
+<img src="/tunez-icon.png"  alt="Logo">
 </p>
 
 <br>
