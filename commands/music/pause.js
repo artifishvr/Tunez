@@ -1,20 +1,16 @@
 module.exports = {
     name: 'pause',
     aliases: [],
-    category: 'Music',
     utilisation: '{prefix}pause',
+    voiceChannel: true,
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel!`);
+        const queue = player.getQueue(message.guild.id);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel!`);
-        
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - There is no music playing!`);
+        if (!queue) return message.channel.send(`No music currently playing ${message.author}... try again ? ❌`);
 
-        if (client.player.getQueue(message).paused) return message.channel.send(`${client.emotes.error} - This song is already paused!`);
+        const success = queue.setPaused(true);
 
-        const success = client.player.pause(message);
-
-        if (success) message.channel.send(`${client.emotes.success} - To music ${client.player.getQueue(message).playing.title} was paused!`);
+        return message.channel.send(success ? `Current music ${queue.current.title} paused ✅` : `Something went wrong ${message.author}... try again ? ❌`);
     },
 };

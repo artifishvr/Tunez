@@ -1,44 +1,34 @@
+const { MessageEmbed } = require('discord.js');
+
 module.exports = {
     name: 'nowplaying',
     aliases: ['np'],
-    category: 'Music',
     utilisation: '{prefix}nowplaying',
+    voiceChannel: true,
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel!`);
+        const queue = player.getQueue(message.guild.id);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel!`);
+        if (!queue || !queue.playing) return message.channel.send(`No music currently playing ${message.author}... try again ? ❌`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - There is no song to be played!`);
+        const track = queue.current;
 
-        const track = client.player.nowPlaying(message);
-        const filters = [];
+        const embed = new MessageEmbed();
 
-        Object.keys(client.player.getQueue(message).filters).forEach((filterName) => client.player.getQueue(message).filters[filterName]) ? filters.push(filterName) : false;
+        embed.setColor('RED');
+        embed.setThumbnail(track.thumbnail);
+        embed.setAuthor(track.title, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
 
-        message.channel.send({
-            embed: {
-                color: 'RED',
-                author: { name: track.title },
-                footer: { text: 'fuck you' },
-                fields: [
-                    { name: 'Channel', value: track.author, inline: true },
-                    { name: 'Requested by', value: track.requestedBy.username, inline: true },
-                    { name: 'Has playlist', value: track.fromPlaylist ? 'Yes' : 'No', inline: true },
+        const methods = ['disabled', 'track', 'queue'];
 
-                    { name: 'Views', value: track.views, inline: true },
-                    { name: 'Duration', value: track.duration, inline: true },
-                    { name: 'Filters enabled', value: filters.length + '/' + client.filters.length, inline: true },
+        const timestamp = queue.getPlayerTimestamp();
+        const trackDuration = timestamp.progress == 'Infinity' ? 'infinity (live)' : track.duration;
 
-                    { name: 'Volume', value: client.player.getQueue(message).volume, inline: true },
-                    { name: 'Repeat', value: client.player.getQueue(message).repeatMode ? 'Yes' : 'No', inline: true },
-                    { name: 'Is paused', value: client.player.getQueue(message).paused ? 'Yes' : 'No', inline: true },
+        embed.setDescription(`Volume **${queue.volume}**%\nDuration **${trackDuration}**\nLoop mode **${methods[queue.repeatMode]}**\nRequested by ${track.requestedBy}`);
 
-                    { name: 'Progress Bar', value: client.player.createProgressBar(message, { timecodes: true }), inline: true }
-                ],
-                thumbnail: { url: track.thumbnail },
-                timestamp: new Date(),
-            },
-        });
+        embed.setTimestamp();
+        embed.setFooter('Music comes first - Made with heart by Zerio ❤️', message.author.avatarURL({ dynamic: true }));
+
+        message.channel.send({ embeds: [embed] });
     },
 };

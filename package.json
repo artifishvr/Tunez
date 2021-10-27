@@ -1,16 +1,17 @@
 {
-  "name": "Tunez",
-  "main": "index.js",
+  "name": "tunez",
+  "main": "main.js",
   "author": "ArtificialButter",
-  "version": "5.0.0",
-  "description": "A discord music bot",
+  "version": "6.0.0",
+  "description": "A music bot",
   "scripts": {
-    "start": "node index.js"
+    "start": "node main.js"
   },
   "dependencies": {
-    "@discordjs/opus": "^0.3.3",
-    "discord-player": "^3.3.2",
-    "discord.js": "^12.5.1",
-    "ffmpeg-static": "^4.2.7"
+    "discord-player": "^5.1.0",
+    "discord.js": "^13.1.0",
+    "ffmpeg-static": "^4.4.0",
+    "ms": "^3.0.0-canary.1",
+    "opusscript": "^0.0.8"
   }
 }

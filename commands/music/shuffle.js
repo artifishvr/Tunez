@@ -1,18 +1,18 @@
 module.exports = {
     name: 'shuffle',
     aliases: ['sh'],
-    category: 'Music',
     utilisation: '{prefix}shuffle',
+    voiceChannel: true,
 
-    execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+    async execute(client, message) {
+        const queue = player.getQueue(message.guild.id);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
+        if (!queue || !queue.playing) return message.channel.send(`No music currently playing ${message.author}... try again ? ❌`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!queue.tracks[0]) return message.channel.send(`No music in the queue after the current one ${message.author}... try again ? ❌`);
 
-        const success = client.player.shuffle(message);
+        await queue.shuffle();
 
-        if (success) message.channel.send(`${client.emotes.success} - Queue shuffled **${client.player.getQueue(message).tracks.length}** song(s) !`);
+        return message.channel.send(`Queue shuffled **${queue.tracks.length}** song(s) ! ✅`);
     },
 };
