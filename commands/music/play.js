@@ -1,36 +1,17 @@
-const { QueryType } = require('discord-player');
-
 module.exports = {
     name: 'play',
     aliases: ['p'],
-    utilisation: '{prefix}play [song name/URL]',
-    voiceChannel: true,
+    category: 'Music',
+    utilisation: '{prefix}play [name/URL]',
 
-    async execute(client, message, args) {
-        if (!args[0]) return message.channel.send(`Please enter a valid search ${message.author}... try again ? ❌`);
+    execute(client, message, args) {
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel!`);
 
-        const res = await player.search(args.join(' '), {
-            requestedBy: message.member,
-            searchEngine: QueryType.AUTO
-        });
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel!`);
 
-        if (!res || !res.tracks.length) return message.channel.send(`No results found ${message.author}... try again ? ❌`);
+        if (!args[0]) return message.channel.send(`${client.emotes.error} - Specify the song you want to listen to!`);
 
-        const queue = await player.createQueue(message.guild, {
-            metadata: message.channel
-        });
-
-        try {
-            if (!queue.connection) await queue.connect(message.member.voice.channel);
-        } catch {
-            await player.deleteQueue(message.guild.id);
-            return message.channel.send(`I can't join the voice channel ${message.author}... try again ? ❌`);
-        }
-
-        await message.channel.send(`Loading your ${res.playlist ? 'playlist' : 'track'}... 🎧`);
-
-        res.playlist ? queue.addTracks(res.tracks) : queue.addTrack(res.tracks[0]);
-
-        if (!queue.playing) await queue.play();
+        client.player.play(message, args.join(" "), { firstResult: true });
+        console.log("Vibe: Playing " + args.join(" "))
     },
 };
