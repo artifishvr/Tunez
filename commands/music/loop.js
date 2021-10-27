@@ -1,28 +1,32 @@
-const { QueueRepeatMode } = require('discord-player');
-
 module.exports = {
     name: 'loop',
     aliases: ['lp', 'repeat'],
-    utilisation: '{prefix}loop <queue>',
-    voiceChannel: true,
+    category: 'Music',
+    utilisation: '{prefix}loop',
 
     execute(client, message, args) {
-        const queue = player.getQueue(message.guild.id);
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel!`);
 
-        if (!queue || !queue.playing) return message.channel.send(`No music currently playing ${message.author}... try again ? ❌`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel!`);
 
-        if (args.join('').toLowerCase() === 'queue') {
-            if (queue.repeatMode === 1) return message.channel.send(`You must first disable the current music in the loop mode (${client.config.app.px}loop) ${message.author}... try again ? ❌`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing!`);
 
-            const success = queue.setRepeatMode(queue.repeatMode === 0 ? QueueRepeatMode.QUEUE : QueueRepeatMode.OFF);
-
-            return message.channel.send(success ? `Repeat mode **${queue.repeatMode === 0 ? 'disabled' : 'enabled'}** the whole queue will be repeated endlessly 🔁` : `Something went wrong ${message.author}... try again ? ❌`);
+        if (args.join(" ").toLowerCase() === 'queue') {
+            if (client.player.getQueue(message).loopMode) {
+                client.player.setLoopMode(message, false);
+                return message.channel.send(`${client.emotes.success} - Repeat mode **disabled** !`);
+            } else {
+                client.player.setLoopMode(message, true);
+                return message.channel.send(`${client.emotes.success} - Repeat mode **enabled** the whole queue will be repeated endlessly !`);
+            };
         } else {
-            if (queue.repeatMode === 2) return message.channel.send(`You must first disable the current queue in the loop mode (${client.config.app.px}loop queue) ${message.author}... try again ? ❌`);
-
-            const success = queue.setRepeatMode(queue.repeatMode === 0 ? QueueRepeatMode.TRACK : QueueRepeatMode.OFF);
-
-            return message.channel.send(success ? `Repeat mode **${queue.repeatMode === 0 ? 'disabled' : 'enabled'}** the current music will be repeated endlessly (you can loop the queue with the <queue> option) 🔂` : `Something went wrong ${message.author}... try again ? ❌`);
+            if (client.player.getQueue(message).repeatMode) {
+                client.player.setRepeatMode(message, false);
+                return message.channel.send(`${client.emotes.success} - Repeat mode **disabled** !`);
+            } else {
+                client.player.setRepeatMode(message, true);
+                return message.channel.send(`${client.emotes.success} - Repeat mode **enabled** the current music will be repeated endlessly !`);
+            };
         };
     },
 };

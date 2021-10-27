@@ -1,25 +1,48 @@
-const { MessageEmbed } = require('discord.js');
-
 module.exports = {
     name: 'help',
     aliases: ['h'],
-    showHelp: false,
-    utilisation: '{prefix}help',
+    category: 'Core',
+    utilisation: '{prefix}help <command name>',
 
     execute(client, message, args) {
-        const embed = new MessageEmbed();
+        if (!args[0]) {
+            const infos = message.client.commands.filter(x => x.category == 'Infos').map((x) => '`' + x.name + '`').join(', ');
+            const music = message.client.commands.filter(x => x.category == 'Music').map((x) => '`' + x.name + '`').join(', ');
 
-        embed.setColor('BLUE');
-        embed.setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
+            message.channel.send({
+                embed: {
+                    color: 'BLUE',
+                    author: { name: 'Tunez' },
+                    footer: { text: 'V2' },
+                    fields: [
+                        { name: 'Bot', value: infos },
+                        { name: 'Music', value: music },
+                        { name: 'Filters', value: client.filters.map((x) => '`' + x + '`').join(', ') },
+                    ],
+                    timestamp: new Date(),
+                    description: `To use filters, ${client.config.discord.prefix}filter (the filter). Example : ${client.config.discord.prefix}filter 8D.`,
+                },
+            });
+        } else {
+            const command = message.client.commands.get(args.join(" ").toLowerCase()) || message.client.commands.find(x => x.aliases && x.aliases.includes(args.join(" ").toLowerCase()));
 
-        const commands = client.commands.filter(x => x.showHelp !== false);
+            if (!command) return message.channel.send(`${client.emotes.error} - I could not find that command!`);
 
-        embed.setDescription('Donate to keep this bot alive at paypal.me/artificialbuttr');
-        embed.addField(`Enabled - ${commands.size}`, commands.map(x => `\`${x.name}${x.aliases[0] ? ` (${x.aliases.map(y => y).join(', ')})\`` : '\`'}`).join(' | '));
-
-        embed.setTimestamp();
-        embed.setFooter('Tunez V2', message.author.avatarURL({ dynamic: true }));
-
-        message.channel.send({ embeds: [embed] });
+            message.channel.send({
+                embed: {
+                    color: 'BLUE',
+                    author: { name: 'Tunez' },
+                    footer: { text: 'V2' },
+                    fields: [
+                        { name: 'Name', value: command.name, inline: true },
+                        { name: 'Category', value: command.category, inline: true },
+                        { name: 'Aliase(s)', value: command.aliases.length < 1 ? 'None' : command.aliases.join(', '), inline: true },
+                        { name: 'Utilisation', value: command.utilisation.replace('{prefix}', client.config.discord.prefix), inline: true },
+                    ],
+                    timestamp: new Date(),
+                    description: 'Find information on the command provided.\nMandatory arguments `[]`, optional arguments `<>`.',
+                }
+            });
+        };
     },
 };
