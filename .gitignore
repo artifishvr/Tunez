@@ -1,4 +1,4 @@
 # Node
 node_modules/
 # Token
-bot.js
+config/bot.js
