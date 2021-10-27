@@ -12,8 +12,7 @@ module.exports = {
         if (!args[0]) return message.channel.send(`${client.emotes.error} - Specify the song you want to listen to!`);
 
         client.player.play(message, args.join(" "), { firstResult: true });
-        console.log("Playing " + args.join(" "))
-    }, catch (error) {
+     }, catch (error) {
         console.error(error);
       }
 };
