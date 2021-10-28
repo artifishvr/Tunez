@@ -5,7 +5,7 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 
 const { Player } = require('discord-player');
 
-client.player = new Player(client);
+client.player = new Player(client, { enableLive: true });
 client.config = require('./config/bot');
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;

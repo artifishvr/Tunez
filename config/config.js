@@ -2,7 +2,7 @@ module.exports = {
     app: {
         px: 't.',
         token: '',
-        playing: 'discord.io/tunez | t.help  1'
+        playing: 'discord.io/tunez | t.help'
     },
 
     opt: {
@@ -11,7 +11,7 @@ module.exports = {
             roleName: 'DJ',
             commands: ['back', 'clear', 'filter', 'loop', 'pause', 'resume', 'seek', 'shuffle', 'skip', 'stop', 'volume']
         },
-        maxVol: 100,
+        maxVol: 200,
         loopMessage: false,
         discordPlayer: {}
     }
