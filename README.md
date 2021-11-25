@@ -57,7 +57,7 @@ About coming soon!
 
 * [DiscordJS](https://discord.js.org/)
 * [Discord-Player]()
-* [Opusscript]()
+
 
 
 
@@ -107,6 +107,6 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [ZerioDev](https://github.com/ZerioDev/Music-bot)
+* [  ]( )
 
 <p align="right">(<a href="#top">back to top</a>)</p>
