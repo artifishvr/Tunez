@@ -1,4 +1,4 @@
 # Node
-node_modules/
-# Token
-config/bot.js
+node_modules
+.env
+package-lock.json

@@ -1,16 +1,25 @@
 {
-  "name": "Tunez",
-  "main": "index.js",
-  "author": "ArtificialButter",
-  "version": "5.0.0",
-  "description": "A discord music bot",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "@discordjs/opus": "^0.3.3",
-    "discord-player": "^3.3.2",
-    "discord.js": "^12.5.1",
-    "ffmpeg-static": "^4.2.7"
+    "name": "tunez",
+    "version": "3.0.0",
+    "description": "The second version of my discord music bot. Being brought back to carry on discord music!",
+    "main": "index.js",
+    "repository": "https://github.com/artificialbutter/TunezV2",
+    "author": "ArtificialButter",
+    "license": "MIT",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "@discord-player/downloader": "^3.0.1",
+      "@discord-player/extractor": "^3.0.2",
+      "@discordjs/opus": "^0.6.0",
+      "discord-player": "^5.1.0",
+      "discord.js": "^13.1.0",
+      "dotenv": "^10.0.0",
+      "slash-create": "^4.0.1"
+    },
+    "devDependencies": {
+      "eslint": "^7.32.0",
+      "mdtable": "^0.3.1"
+    }
   }
-}

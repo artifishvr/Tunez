@@ -1,39 +1,61 @@
-const fs = require('fs');
-const discord = require('discord.js');
-
-const client = new discord.Client({ disableMentions: 'everyone' });
-
+const dotenv = require('dotenv');
+const path = require('path');
+const { SlashCreator, GatewayServer } = require('slash-create');
+const { Client } = require('discord.js');
 const { Player } = require('discord-player');
+const { registerPlayerEvents } = require('./events');
+const { generateDocs } = require('./docs');
 
-client.player = new Player(client, { enableLive: true });
-client.config = require('./config/bot');
-client.emotes = client.config.emojis;
-client.filters = client.config.filters;
-client.commands = new discord.Collection();
+dotenv.config();
 
-fs.readdirSync('./commands').forEach(dirs => {
-    const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
-
-    for (const file of commands) {
-        const command = require(`./commands/${dirs}/${file}`);
-        console.log(`Loading command ${file}`);
-        client.commands.set(command.name.toLowerCase(), command);
-    };
+const client = new Client({
+    intents: [
+        'GUILDS',
+        'GUILD_VOICE_STATES',
+        'GUILD_MESSAGES'
+    ]
 });
 
-const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
+client.player = new Player(client);
+registerPlayerEvents(client.player);
 
-for (const file of events) {
-    console.log(`Loading discord.js event ${file}`);
-    const event = require(`./events/${file}`);
-    client.on(file.split(".")[0], event.bind(null, client));
+const creator = new SlashCreator({
+    applicationID: process.env.DISCORD_CLIENT_ID,
+    token: process.env.DISCORD_CLIENT_TOKEN,
+});
+
+client.on('ready', () => {
+    client.user.setActivity("slash commands! | discord.io/tunez", { type: 'LISTENING' });
+    
+    console.log(`Logged in as ${client.user.tag}!`);
+
+    console.log('Generating docs...');
+    generateDocs(creator.commands);
+});
+
+const old_prefix = "t."
+client.on('message', async message => {
+
+   if (!message.content.startsWith(old_prefix)) return;
+   if (message.author.bot) return;
+   
+   message.channel.send("I have now moved to slash commands. \nDon't see any slash commands? Try adding Tunez again with https://tinyurl.com/tunezinvite")
+});
+
+creator
+    .withServer(
+        new GatewayServer(
+            (handler) => client.ws.on('INTERACTION_CREATE', handler)
+        )
+    )
+    .registerCommandsIn(path.join(__dirname, 'commands'));
+
+if (process.env.DISCORD_GUILD_ID) creator.syncCommandsIn(process.env.DISCORD_GUILD_ID);
+else creator.syncCommands();
+
+client.login(process.env.DISCORD_CLIENT_TOKEN);
+
+module.exports = {
+    client,
+    creator
 };
-
-for (const file of player) {
-    console.log(`Loading discord-player event ${file}`);
-    const event = require(`./player/${file}`);
-    client.player.on(file.split(".")[0], event.bind(null, client));
-};
-
-client.login(client.config.discord.token);

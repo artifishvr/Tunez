@@ -12,7 +12,7 @@
   <p align="center">
     A simple, and stable discord music bot.
     <br />
-    <a href="https://discord.com/api/oauth2/authorize?client_id=816956965656723467&permissions=36719616&scope=bot"><strong>Invite the bot! »</strong></a>
+    <a href="https://discord.com/api/oauth2/authorize?client_id=816956965656723467&permissions=8&scope=bot%20applications.commands"><strong>Invite the bot! »</strong></a>
     <br />
     <br />
     <a href="https://github.com/artificialbutter/TunezV2/issues">Report Bug</a>
@@ -47,7 +47,7 @@
 <img src="screenshot.png"
          alt="Screenshot">
 
-About coming soon!
+A bot originally created around March 2021 for my personal server as just another music bot. It has now been rewritten and improved upon, and is online again to fill in the gap that groovy left.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -56,22 +56,25 @@ About coming soon!
 ### Built With
 
 * [DiscordJS](https://discord.js.org/)
-* [Discord-Player]()
-* [Opusscript]()
+* [Discord-Player](https://www.npmjs.com/package/discord-player)
+* [Slash-Create](https://www.npmjs.com/package/slash-create)
 
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Insert Commands Here
-
+#### All of the commands are now accessed via slash commands, which can be accessed by typing / in discord, or clicking the plus button and then use slash command. 
+<img src="slashcommandscreenshot2.png"
+         alt="Screenshot of some slash commands">
+<img src="slashcommandscreenshot.png"
+         alt="Screenshot of some slash commands">
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] More embeds
-- [] Delete "Now Playing" and such messages when done playing
+- [ ] Add more stuff to the roadmap
+- [X] Add slash commands
+- [X] Rewrite code
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -107,6 +110,6 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [ZerioDev](https://github.com/ZerioDev/Music-bot)
+* [Me](https://github.com/artificialbutter)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
