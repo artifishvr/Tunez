@@ -34,7 +34,7 @@ client.on('ready', () => {
 });
 
 const old_prefix = "t."
-client.on('message', async message => {
+client.on('messageCreate', async message => {
 
    if (!message.content.startsWith(old_prefix)) return;
    if (message.author.bot) return;
