@@ -4,7 +4,7 @@ module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
             name: 'remove',
-            description: 'Remove a specific track',
+            description: 'Remove a specific track from the queue',
             options: [
                 {
                     name: 'track',

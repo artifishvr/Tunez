@@ -5,7 +5,7 @@ module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
             name: 'loop',
-            description: 'Set loop mode',
+            description: 'Set the loop mode',
             options: [
                 {
                     name: 'mode',

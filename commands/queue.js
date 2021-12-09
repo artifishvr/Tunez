@@ -4,7 +4,7 @@ module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
             name: 'queue',
-            description: 'See the queue',
+            description: 'View the queue',
             options: [
                 {
                     name: 'page',

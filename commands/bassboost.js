@@ -4,7 +4,7 @@ module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
             name: 'bassboost',
-            description: 'Toggle bassboost filter',
+            description: 'Toggle the bassboost filter',
 
             guildIDs: process.env.DISCORD_GUILD_ID ? [ process.env.DISCORD_GUILD_ID ] : undefined
         });
