@@ -69,15 +69,39 @@ A bot originally created around March 2021 for my personal server as just anothe
          alt="Screenshot of some slash commands">
 <img src="slashcommandscreenshot.png"
          alt="Screenshot of some slash commands">
+
+### Commands
+<div id="commands">
+|      Name      |            Description             |  Options  |
+|:---------------|:----------------------------------:|----------:|
+|   **/back**    |      Play the previous track       |           |
+| **/bassboost** |      Toggle bassboost filter       |           |
+|   **/clear**   |      Clear the current queue.      |           |
+|  **/history**  |     Display the queue history      |  \<page>  |
+|   **/jump**    |      Jump to a specific track      | \<tracks> |
+|   **/loop**    |           Set loop mode            |  \<mode>  |
+| **/nightcore** |    Toggles the nightcore filter    |           |
+|    **/np**     | See what's currently being played  |           |
+|   **/pause**   |       Pause the current song       |           |
+|   **/play**    |      Play a song from youtube      | \<query>  |
+| **/playnext**  | Add a song to the top of the queue | \<query>  |
+|   **/queue**   |           See the queue            |  \<page>  |
+|  **/remove**   |      Remove a specific track       | \<track>  |
+|  **/resume**   |      Resume the current song       |           |
+|   **/seek**    |       Seek to the given time       |  \<time>  |
+|  **/shuffle**  |         Shuffle the queue          |           |
+|   **/skip**    |      Skip to the current song      |           |
+|  **/status**   |      Gets the status of Tunez      |           |
+|   **/stop**    |          Stop the player           |           |
+|  **/volume**   |          Set music volume          | \<amount> |
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
 ## Roadmap
 
 - [ ] Add Command Documentation
 - [X] Add slash commands
 - [X] Rewrite code
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -110,27 +134,6 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Me](https://github.com/artificialbutter)
+* [Androz](https://github.com/Androz2091)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-<!--|      Name      |            Description             |  Options  |
-|:---------------|:----------------------------------:|----------:|
-|   **/back**    |      Play the previous track       |           |
-| **/bassboost** |      Toggle bassboost filter       |           |
-|   **/clear**   |      Clear the current queue.      |           |
-|  **/history**  |     Display the queue history      |  \<page>  |
-|   **/jump**    |      Jump to a specific track      | \<tracks> |
-|   **/loop**    |           Set loop mode            |  \<mode>  |
-|    **/np**     | See what's currently being played  |           |
-|   **/pause**   |       Pause the current song       |           |
-|   **/play**    |      Play a song from youtube      | \<query>  |
-| **/playnext**  | Add a song to the top of the queue | \<query>  |
-|   **/queue**   |           See the queue            |  \<page>  |
-|  **/remove**   |      Remove a specific track       | \<track>  |
-|  **/resume**   |      Resume the current song       |           |
-|   **/seek**    |       Seek to the given time       |  \<time>  |
-|  **/shuffle**  |         Shuffle the queue          |           |
-|   **/skip**    |      Skip to the current song      |           |
-|  **/status**   |      Gets the status of Tunez      |           |
-|   **/stop**    |          Stop the player           |           |
-|  **/volume**   |          Set music volume          | \<amount> | -->
