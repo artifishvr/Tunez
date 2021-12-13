@@ -16,15 +16,7 @@ module.exports = class extends SlashCommand {
 
         await ctx.defer();
 
-        const queue = client.player.getQueue(ctx.guildID);
-        if (!queue || !queue.playing) return void ctx.sendFollowUp({ content: '❌ | No music is being played!' });
-        await queue.setFilters({
-            bassboost: !queue.getFiltersEnabled().includes('bassboost'),
-            normalizer2: !queue.getFiltersEnabled().includes('bassboost') // because we need to toggle it with bass
-        });
-
-        setTimeout(() => {
-            return void ctx.sendFollowUp({ content: `🎵 | Bassboost ${queue.getFiltersEnabled().includes('bassboost') ? 'Enabled' : 'Disabled'}!` });
-        }, queue.options.bufferingTimeout);
+        ctx.sendFollowUp({ content: `Due to an issue with discord-player, this command is temporarily disabled.\n
+        Join https://discord.io/tunez for updates.` });
     }
 };
