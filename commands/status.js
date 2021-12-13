@@ -15,7 +15,6 @@ module.exports = class extends SlashCommand {
         const { client } = require('..');
 
         await ctx.defer();
-// 
 
         ctx.sendFollowUp({ content: `💻 | Currently in **${client.guilds.cache.size}** servers\n📶 | Ping: **${client.ws.ping}**` });
     }
