@@ -1,6 +1,6 @@
 {
     "name": "tunez",
-    "version": "3.0.0",
+    "version": "3.1.4",
     "description": "The second version of my discord music bot. Being brought back to carry on discord music!",
     "main": "index.js",
     "repository": "https://github.com/artificialbutter/TunezV2",
