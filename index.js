@@ -33,15 +33,6 @@ client.on('ready', () => {
     generateDocs(creator.commands);
 });
 
-const old_prefix = "t."
-client.on('messageCreate', async message => {
-
-   if (!message.content.startsWith(old_prefix)) return;
-   if (message.author.bot) return;
-   
-   message.channel.send("I have now moved to slash commands. \nDon't see any slash commands? Try adding Tunez again with https://bit.ly/tunezadd")
-});
-
 creator
     .withServer(
         new GatewayServer(
