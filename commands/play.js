@@ -45,7 +45,7 @@ module.exports = class extends SlashCommand {
         const member = guild.members.cache.get(ctx.user.id) ?? await guild.members.fetch(ctx.user.id);
         try {
             if (!queue.connection) await queue.connect(member.voice.channel);
-            queue.setVolume(50);
+            
         } catch {
             void client.player.deleteQueue(ctx.guildID);
             return void ctx.sendFollowUp({ content: 'Could not join your voice channel!' });
