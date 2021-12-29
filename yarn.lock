@@ -2021,6 +2021,18 @@
     "quick-format-unescaped" "^4.0.3"
     "sonic-boom" "^1.0.2"
 
+"play-audio@^0.4.3":
+  "integrity" "sha512-DOLTP1+cgXH0k1ZdZyXXRsAPnVrzV2xZV6EXpWRsMtk24oolS7mD3WUQltuCeuJXKGM1tIsXLr+EZo6Ky4aKRg=="
+  "resolved" "https://registry.npmjs.org/play-audio/-/play-audio-0.4.3.tgz"
+  "version" "0.4.3"
+
+"play-dl@^1.6.8":
+  "integrity" "sha512-y2K+HHt1yZHAUwW5WKaL83YS+bLOw1PRnyU4YeVFfIeHMVcvRmpyzAwYCzlG8XzKAjE0ma1sC3PZgjhV3uWqDw=="
+  "resolved" "https://registry.npmjs.org/play-dl/-/play-dl-1.6.8.tgz"
+  "version" "1.6.8"
+  dependencies:
+    "play-audio" "^0.4.3"
+
 "prelude-ls@^1.2.1":
   "integrity" "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
   "resolved" "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
