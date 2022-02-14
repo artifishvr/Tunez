@@ -26,6 +26,10 @@ const creator = new SlashCreator({
 
 client.on('ready', () => {
     client.user.setActivity("slash commands! | discord.io/tunez", { type: 'LISTENING' });
+    setInterval(() => {
+        client.user.setActivity("slash commands! | discord.io/tunez", { type: 'LISTENING' });
+      }, 3600000);
+    
     
     console.log(`Logged in as ${client.user.tag}!`);
 
