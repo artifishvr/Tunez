@@ -3,7 +3,7 @@ const { readFileSync, writeFileSync } = require('fs');
 
 module.exports.generateDocs = (commands) => {
 
-    const readme = readFileSync('./README.md', 'utf-8');
+    const readme = readFileSync('./Commands.md', 'utf-8');
     const aboveTable = readme.split('| ').shift();
     const belowTable = readme.split(' |').pop();
 
@@ -24,6 +24,6 @@ module.exports.generateDocs = (commands) => {
 
     const finalReadme = `${aboveTable}${mdtable(tableData, tableSettings)}${belowTable}`;
 
-    writeFileSync('./README.md', finalReadme, 'utf-8');
+    writeFileSync('./Commands.md', finalReadme, 'utf-8');
 
 }
