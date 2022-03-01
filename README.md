@@ -72,13 +72,13 @@ A bot originally created around March 2021 for my personal server as just anothe
 
 ### Commands
 <div id="commands">
-You can view all the commands via discord's built in slash command viewer (see above)
+You can view all the commands in <a href="/Commands.md">Commands.md</a> or using discords built in slash command viewer (see above)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add Command Documentation
+- [X] Add Command Documentation
 - [X] Add slash commands
 - [X] Rewrite code
 
