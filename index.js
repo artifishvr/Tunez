@@ -31,10 +31,11 @@ client.on('ready', () => {
       }, 3600000);
     
     
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Logging in as ${client.user.tag}`);
 
-    console.log('Generating docs...');
+    console.log('Updating Commands.md...');
     generateDocs(creator.commands);
+    console.log('Ready!');
 });
 
 creator
@@ -49,7 +50,6 @@ if (process.env.DISCORD_GUILD_ID) creator.syncCommandsIn(process.env.DISCORD_GUI
 else creator.syncCommands();
 
 client.login(process.env.DISCORD_CLIENT_TOKEN);
-
 module.exports = {
     client,
     creator
