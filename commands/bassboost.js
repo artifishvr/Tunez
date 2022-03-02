@@ -16,6 +16,6 @@ module.exports = class extends SlashCommand {
 
         await ctx.defer();
 
-        ctx.sendFollowUp({ content: `Due to an issue with discord-player, this command is temporarily disabled.\nJoin <https://discord.io/tunez> for updates.` });
+        ctx.sendFollowUp({ content: `Due to an issue with discord-player, this command is temporarily disabled.\nJoin <https://tunez.ml/support> for updates.` });
     }
 };
