@@ -25,9 +25,9 @@ const creator = new SlashCreator({
 });
 
 client.on('ready', () => {
-    client.user.setActivity("slash commands! | discord.io/tunez", { type: 'LISTENING' });
+    client.user.setActivity("some tunes | tunez.ml", { type: 'LISTENING' });
     setInterval(() => {
-        client.user.setActivity("slash commands! | discord.io/tunez", { type: 'LISTENING' });
+        client.user.setActivity("some tunes | tunez.ml", { type: 'LISTENING' });
       }, 3600000);
     
     
