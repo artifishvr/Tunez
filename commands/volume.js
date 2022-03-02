@@ -7,7 +7,7 @@ module.exports = class extends SlashCommand {
             description: 'Set music volume',
             options: [
                 {
-                    name: 'amount',
+                    name: 'volume',
                     type: CommandOptionType.INTEGER,
                     description: 'The volume amount to set (0-100)',
                     required: false
