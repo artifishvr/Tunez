@@ -16,6 +16,6 @@ module.exports = class extends SlashCommand {
 
         await ctx.defer();
 
-        ctx.sendFollowUp({ content: `💻 | Currently in **${client.guilds.cache.size}** servers\n📶 | Ping: **${client.ws.ping}**` });
+        ctx.sendFollowUp({ content: `💻 | Currently in **${client.guilds.cache.size}** servers\n📶 | Ping: **${client.ws.ping}**\n🖥️ | View the full status page: <https://status.tunez.ml>` });
     }
 };
