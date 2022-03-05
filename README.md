@@ -10,7 +10,7 @@
   <h3 align="center">Tunez</h3>
 
   <p align="center">
-    A simple, and stable discord music bot.
+    Tunez now has a website! Visit it at <a href="https://tunez.ml">tunez.ml</a>
     <br />
     <a href="https://discord.com/api/oauth2/authorize?client_id=816956965656723467&permissions=8&scope=bot%20applications.commands"><strong>Invite the bot! »</strong></a>
     <br />
