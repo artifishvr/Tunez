@@ -5,12 +5,12 @@ module.exports = class extends SlashCommand {
     constructor(creator) {
         super(creator, {
             name: 'play',
-            description: 'Play a song from youtube, or a direct link',
+            description: 'Play a song from Youtube, or a Youtube or Spotify link',
             options: [
                 {
                     name: 'query',
                     type: CommandOptionType.STRING,
-                    description: 'The song you want to play',
+                    description: 'Youtube search, Youtube link, or Spotify link for the song you want to play',
                     required: true
                 }
             ],
@@ -32,13 +32,12 @@ module.exports = class extends SlashCommand {
             .search(query, {
                 requestedBy: ctx.user,
                 searchEngine: QueryType.AUTO
-            })
-            .catch(() => {
-                console.log('he');
             });
         if (!searchResult || !searchResult.tracks.length) return void ctx.sendFollowUp({ content: 'No results were found!' });
 
         const queue = await client.player.createQueue(guild, {
+            initialVolume: 50,
+            spotifyBridge: true,
             ytdlOptions: {
                 filter: 'audioonly',
                 highWaterMark: 1 << 30,
