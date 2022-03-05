@@ -1,3 +1,5 @@
+# Commands
+
 |      Name      |              Description               |  Options  |
 |:---------------|:--------------------------------------:|----------:|
 |   **/back**    |        Play the previous track         |           |
