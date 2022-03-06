@@ -12,8 +12,7 @@
   <p align="center">
     Tunez now has a website! Visit it at <a href="https://tunez.ml">tunez.ml</a>
     <br />
-    <a href="https://discord.com/api/oauth2/authorize?client_id=816956965656723467&permissions=8&scope=bot%20applications.commands"><strong>Invite the bot! »</strong></a>
-    <br />
+    <a href="https://tunez.ml/invite2"><strong>Invite the bot! »</strong></a>
     <br />
     <a href="https://github.com/artificialbutter/TunezV2/issues">Report Bug</a>
   </p>
@@ -47,7 +46,7 @@
 <img src="screenshot.png"
          alt="Screenshot">
 
-A bot originally created around March 2021 for my personal server as just another music bot. It has now been rewritten and improved upon, and is online again to fill in the gap that groovy left.
+A bot originally created around March 2021 for my personal server as just another music bot. It has since been rewritten and improved upon, and is online again to fill in the gap that groovy left. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -55,24 +54,21 @@ A bot originally created around March 2021 for my personal server as just anothe
 
 ### Built With
 
-* [DiscordJS](https://discord.js.org/)
-* [Discord-Player](https://www.npmjs.com/package/discord-player)
-* [Slash-Create](https://www.npmjs.com/package/slash-create)
+* [discord.js](https://discord.js.org/)
+* [Discord Player](https://www.npmjs.com/package/discord-player)
+* [/Create](https://www.npmjs.com/package/slash-create)
 
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-#### All of the commands are now accessed via slash commands, which can be accessed by typing / in discord, or clicking the plus button and then use slash command. 
-<img src="slashcommandscreenshot2.png"
-         alt="Screenshot of some slash commands">
-<img src="slashcommandscreenshot.png"
-         alt="Screenshot of some slash commands">
+#### All of the commands are accessed using discord's slash commands, which can be accessed by typing / in discord.
+See Discord's <a href="https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ">Slash Command FAQ</a> for more info
 
 ### Commands
 <div id="commands">
-You can view all the commands in <a href="/Commands.md">Commands.md</a> or using discords built in slash command viewer (see above)
+You can view all the commands in <a href="/Commands.md">Commands.md</a> or using Discord's built in slash command viewer
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
@@ -90,13 +86,6 @@ Contributions are what make the open source community such an amazing place to l
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -104,7 +93,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- LICENSE -->
 ## License
 
-Distributed under the GPL-3.0 License. See `LICENSE` for more information.
+Distributed under the GNU General License. See `LICENSE` for more information.
 
 
 
@@ -113,6 +102,6 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Androz](https://github.com/Androz2091)
+* [AndrozDev](https://github.com/Androz2091)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
