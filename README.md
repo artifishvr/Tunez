@@ -93,7 +93,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- LICENSE -->
 ## License
 
-Distributed under the GNU General License. See `LICENSE` for more information.
+Distributed under the GNU General Public License. See `LICENSE` for more information.
 
 
 
