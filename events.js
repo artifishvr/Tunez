@@ -2,11 +2,11 @@ module.exports.registerPlayerEvents = (player) => {
 
     player.on("error", (queue, error) => {
         console.log(`[${queue.guild.name}] Error emitted from the queue: ${error.message}`);
-        queue.metadata.send(`❗ | There was an error playing that song (probably due to youtube), please try again.`);
+        queue.metadata.send(`❗ | There was an error playing that song, please try again.`);
     });
     player.on("connectionError", (queue, error) => {
         console.log(`[${queue.guild.name}] Error emitted from the connection: ${error.message}`);
-        queue.metadata.send(`❗ | There was an error with the connection, please try again.`);
+        queue.metadata.send(`❗ | There was an error playing that song, please try again.`);
     });
 
     player.on("trackStart", (queue, track) => {
@@ -28,5 +28,4 @@ module.exports.registerPlayerEvents = (player) => {
     player.on("queueEnd", (queue) => {
         queue.metadata.send("✅ | Queue finished!");
     });
-
 };
