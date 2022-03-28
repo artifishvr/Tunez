@@ -25,7 +25,7 @@ module.exports = class extends SlashCommand {
             embeds: [
                 {
                     title: 'Now Playing',
-                    description: `🎶 | **${queue.current.title}**! (\`${perc.progress == 'Infinity' ? 'Live' : perc.progress + '%'}\`)`,
+                    description: `🎶 | **${queue.current.title}**! ([link](${queue.current.url}))`,
                     fields: [
                         {
                             name: '\u200b',
