@@ -1,6 +1,6 @@
 {
     "name": "tunez",
-    "version": "3.1.10",
+    "version": "3.4.2",
     "description": "The second version of my discord music bot. Being brought back to carry on discord music!",
     "main": "index.js",
     "repository": "https://github.com/artificialbutter/TunezV2",
@@ -16,7 +16,8 @@
         "discord-player": "5.0.2",
         "discord.js": "^13.1.0",
         "dotenv": "^10.0.0",
-        "slash-create": "^4.0.1"
+        "slash-create": "^4.0.1",
+        "statcord.js": "^3.4.1"
     },
     "devDependencies": {
         "eslint": "^7.32.0",
