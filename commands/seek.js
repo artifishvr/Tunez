@@ -33,6 +33,6 @@ module.exports = class extends SlashCommand {
         const time = ctx.options.time * 1000;
         await queue.seek(time);
 
-        ctx.sendFollowUp({ content: `✅ | Seeked to ${time / 1000} seconds` });
+        ctx.sendFollowUp({ content: `⏩ | Seeked to ${time / 1000} seconds` });
     }
 };

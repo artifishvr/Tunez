@@ -25,7 +25,7 @@ module.exports = class extends SlashCommand {
         const currentTrack = queue.current;
         const success = queue.skip();
         return void ctx.sendFollowUp({
-            content: success ? `✅ | Skipped **${currentTrack}**!` : '❌ | Something went wrong!'
+            content: success ? `⏭️ | Skipped **${currentTrack}**!` : '❌ | Something went wrong!'
         });
 
     }

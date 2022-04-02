@@ -35,7 +35,7 @@ module.exports = class extends SlashCommand {
         if (vol < 0 || vol > 100) return void ctx.sendFollowUp({ content: '❌ | Volume range must be 0-100' });
         const success = queue.setVolume(vol);
         return void ctx.sendFollowUp({
-            content: success ? `✅ | Volume set to **${vol}%**!` : '❌ | Something went wrong!'
+            content: success ? `🎚️ | Volume set to **${vol}%**!` : '❌ | Something went wrong!'
         });
 
     }

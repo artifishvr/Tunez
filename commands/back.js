@@ -25,6 +25,6 @@ module.exports = class extends SlashCommand {
         
         await queue.back();
 
-        ctx.sendFollowUp({ content: '✅ | Playing the previous track!' });
+        ctx.sendFollowUp({ content: '⏮️ | Playing the previous track!' });
     }
 };
