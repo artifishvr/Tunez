@@ -15,12 +15,16 @@ module.exports = class extends SlashCommand {
         const { client } = require('..');
 
         await ctx.defer();
+         
+        // send to statcord
+        const { statcord } = require('..');
+        statcord.postCommand("Shuffle", ctx.user.id);
 
         const queue = client.player.getQueue(ctx.guildID);
         if (!queue || !queue.playing) return void ctx.sendFollowUp({ content: '❌ | No music is being played!' });
         
         await queue.shuffle();
         
-        ctx.sendFollowUp({ content: '✅ | Queue has been shuffled!' });
+        ctx.sendFollowUp({ content: '🔀 | Queue has been shuffled!' });
     }
 };

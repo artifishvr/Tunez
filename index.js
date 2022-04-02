@@ -3,6 +3,7 @@ const path = require("path");
 const { SlashCreator, GatewayServer } = require("slash-create");
 const { Client } = require("discord.js");
 const { Player } = require("discord-player");
+const Statcord = require("statcord.js");
 const { registerPlayerEvents } = require("./events");
 const { generateDocs } = require("./docs");
 
@@ -10,6 +11,14 @@ dotenv.config();
 
 const client = new Client({
   intents: ["GUILDS", "GUILD_VOICE_STATES", "GUILD_MESSAGES"],
+});
+
+const statcord = new Statcord.Client({
+  client,
+  key: process.env.STATCORD_APIKEY,
+  postCpuStatistics: false, 
+    postMemStatistics: false, 
+    postNetworkStatistics: false,
 });
 
 client.player = new Player(client);
@@ -35,6 +44,12 @@ client.on("ready", () => {
   console.log("Updating Commands.md...");
   generateDocs(creator.commands);
   console.log("Ready!");
+  statcord.autopost();
+});
+
+statcord.on("autopost-start", () => {
+  // Emitted when statcord autopost starts
+  console.log("Started Statcord Autopost");
 });
 
 creator
@@ -51,4 +66,5 @@ client.login(process.env.DISCORD_CLIENT_TOKEN);
 module.exports = {
   client,
   creator,
+  statcord,
 };

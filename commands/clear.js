@@ -15,6 +15,10 @@ module.exports = class extends SlashCommand {
         const { client } = require('..');
 
         await ctx.defer();
+         
+        // send to statcord
+        const { statcord } = require('..');
+        statcord.postCommand("Clear", ctx.user.id);
 
         const queue = client.player.getQueue(ctx.guildID);
         if (!queue) return void ctx.sendFollowUp({ content: '❌ | No music in the queue!' });

@@ -1,5 +1,6 @@
 const { SlashCommand, CommandOptionType } = require('slash-create');
 const { QueryType } = require('discord-player');
+const { Interaction } = require('discord.js');
 
 module.exports = class extends SlashCommand {
     constructor(creator) {
@@ -24,7 +25,11 @@ module.exports = class extends SlashCommand {
         const { client } = require('..');
 
         await ctx.defer();
-
+       
+        // send to statcord
+        const { statcord } = require('..');
+        statcord.postCommand("Play", ctx.user.id);
+    
         const guild = client.guilds.cache.get(ctx.guildID);
         const channel = guild.channels.cache.get(ctx.channelID);
         const query = ctx.options.query;
