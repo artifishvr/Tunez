@@ -18,11 +18,20 @@ module.exports.registerPlayerEvents = (player) => {
     });
 
     player.on("botDisconnect", (queue) => {
-        queue.metadata.send("❌ | I was manually disconnected from the voice channel, clearing queue!");
+        try {
+            queue.metadata.send("❌ | I was manually disconnected from the voice channel, clearing queue!");
+        } catch (error) {
+            console.error(error)
+        }
     });
 
     player.on("channelEmpty", (queue) => {
-        queue.metadata.send("❌ | Nobody is in the voice channel, leaving...");
+        try {
+            queue.metadata.send("❌ | Nobody is in the voice channel, leaving...");
+        } catch (error) {
+            console.error(error)
+        }
+        
     });
 
     player.on("queueEnd", (queue) => {
