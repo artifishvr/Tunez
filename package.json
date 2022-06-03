@@ -20,7 +20,7 @@
         "statcord.js": "^3.4.1"
     },
     "devDependencies": {
-        "eslint": "8.16.0",
+        "eslint": "8.17.0",
         "mdtable": "0.3.1"
     }
 }
