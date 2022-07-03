@@ -12,7 +12,7 @@
     "dependencies": {
         "@discord-player/downloader": "^3.0.1",
         "@discord-player/extractor": "^3.0.2",
-        "@discordjs/opus": "^0.7.0",
+        "@discordjs/opus": "^0.8.0",
         "discord-player": "5.0.2",
         "discord.js": "^13.7.0",
         "dotenv": "^16.0.1",
