@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 const path = require("path");
 const { SlashCreator, GatewayServer } = require("slash-create");
-const { Client } = require("discord.js");
+const { Client, GatewayIntentBits, ActivityType } = require("discord.js");
 const { Player } = require("discord-player");
 const Statcord = require("statcord.js");
 const { registerPlayerEvents } = require("./events");
@@ -10,7 +10,7 @@ const { generateDocs } = require("./docs");
 dotenv.config();
 
 const client = new Client({
-  intents: ["GUILDS", "GUILD_VOICE_STATES", "GUILD_MESSAGES"],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessages],
 });
 
 const statcord = new Statcord.Client({
@@ -31,11 +31,11 @@ const creator = new SlashCreator({
 
 client.on("ready", () => {
   client.user.setActivity("some tunes | tunez.ml", {
-    type: "LISTENING",
+    type: ActivityType.Listening,
   });
   setInterval(() => {
     client.user.setActivity("some tunes | tunez.ml", {
-      type: "LISTENING",
+      type: ActivityType.Listening,
     });
   }, 3600000);
 
