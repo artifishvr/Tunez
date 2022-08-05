@@ -9,7 +9,7 @@ module.exports = class extends SlashCommand {
                 {
                     name: 'page',
                     type: CommandOptionType.INTEGER,
-                    description: 'Specific page number in queue',
+                    description: 'Specific queue page to view',
                     required: false
                 }
             ],

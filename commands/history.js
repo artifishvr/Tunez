@@ -41,7 +41,7 @@ module.exports = class extends SlashCommand {
         return void ctx.sendFollowUp({
             embeds: [
                 {
-                    title: 'Server Queue History',
+                    title: 'Queue History',
                     description: `${tracks.join('\n')}${
                         queue.previousTracks.length > (pageStart * -1)
                             ? `\n...${(queue.previousTracks.length + pageStart)} more track(s)`
