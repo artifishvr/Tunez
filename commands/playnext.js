@@ -34,13 +34,10 @@ module.exports = class extends SlashCommand {
 
         const query = ctx.options.query;
         const searchResult = await client.player
-            .search(query, {
-                requestedBy: ctx.user,
-                searchEngine: QueryType.AUTO
-            })
-            .catch(() => {
-                console.log('he');
-            });
+        .search(query, {
+            requestedBy: ctx.user,
+            searchEngine: QueryType.AUTO
+        });
 
         if (!searchResult || !searchResult.tracks.length) return void ctx.sendFollowUp({ content: 'No results were found!' });
         queue.insert(searchResult.tracks[0]); 
