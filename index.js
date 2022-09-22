@@ -30,11 +30,11 @@ const creator = new SlashCreator({
 });
 
 client.on("ready", () => {
-  client.user.setActivity("some tunes | tunez.ml", {
+  client.user.setActivity("terrible music | tunez.ml", {
     type: ActivityType.Listening,
   });
   setInterval(() => {
-    client.user.setActivity("some tunes | tunez.ml", {
+    client.user.setActivity("terrible music | tunez.ml", {
       type: ActivityType.Listening,
     });
   }, 3600000);
