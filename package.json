@@ -18,7 +18,8 @@
         "dotenv": "^16.0.2",
         "opusscript": "^0.0.8",
         "slash-create": "^5.9.0",
-        "statcord.js": "^3.4.3"
+        "statcord.js": "^3.4.3",
+        "ytdl-core": "^4.9.1"
     },
     "devDependencies": {
         "eslint": "8.23.0",
