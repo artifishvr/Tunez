@@ -22,7 +22,7 @@
         "ytdl-core": "^4.9.1"
     },
     "devDependencies": {
-        "eslint": "8.28.0",
+        "eslint": "8.29.0",
         "mdtable": "0.3.1"
     }
 }
