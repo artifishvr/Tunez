@@ -8,7 +8,6 @@
 |  **/history**  |               Display the queue history                |  \<page>  |
 |   **/jump**    |         Jump to a specific track in the queue          | \<tracks> |
 |   **/loop**    |                   Set the loop mode                    |  \<mode>  |
-|  **/lyrics**   |            See lyrics for the current song             |           |
 |    **/np**     |           See what's currently being played            |           |
 |   **/pause**   |                 Pause the current song                 |           |
 |   **/play**    | Play a song from Youtube, or a Youtube or Spotify link | \<query>  |
