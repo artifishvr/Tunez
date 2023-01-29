@@ -9,7 +9,7 @@ module.exports = class extends SlashCommand {
                 {
                     name: 'volume',
                     type: CommandOptionType.INTEGER,
-                    description: 'The volume amount to set (0-100)',
+                    description: 'The volume amount to set (0-200) (Default 50)',
                     required: false
                 }
             ],
