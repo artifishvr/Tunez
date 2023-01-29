@@ -10,7 +10,7 @@
   <h3 align="center">Tunez</h3>
 
   <p align="center">
-    Tunez now has a website! Visit it at <a href="https://tunez.ml">tunez.ml</a>
+    Tunez has a website! Visit it at <a href="https://tunez.ml">tunez.ml</a>
     <br />
     <a href="https://tunez.ml/invite2"><strong>Invite the bot! »</strong></a>
     <br />
@@ -46,7 +46,7 @@
 <img src="screenshot.png"
          alt="Screenshot">
 
-A bot originally created around March 2021 for my personal server as just another music bot. It has since been rewritten and improved upon, and is online again to fill in the gap that groovy left. 
+A bot originally created around March 2021 for my personal server as just another music bot. It has since been rewritten and improved upon, and was brought online again to try and fill in the gap groovy left. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -71,12 +71,15 @@ See Discord's <a href="https://support.discord.com/hc/en-us/articles/15000003685
 You can view all the commands in <a href="/Commands.md">Commands.md</a> or using Discord's built in slash command viewer
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] Add instructions for self hosting
+- [ ] Easy .exe to quickly host the bot
 - [X] Add Command Documentation
 - [X] Add slash commands
-- [X] Rewrite code
+- [X] Rewrite
 
 
 <!-- CONTRIBUTING -->
