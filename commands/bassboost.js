@@ -24,7 +24,7 @@ module.exports = class extends SlashCommand {
         if (!queue || !queue.playing) return void ctx.sendFollowUp({ content: '❌ | No music is being played!' });
         await queue.setFilters({
             bassboost: !queue.getFiltersEnabled().includes('bassboost'),
-            normalizer2: !queue.getFiltersEnabled().includes('bassboost')
+            normalizer: !queue.getFiltersEnabled().includes('bassboost')
         });
 
         setTimeout(() => {
