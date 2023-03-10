@@ -14,7 +14,7 @@ module.exports.registerPlayerEvents = (player) => {
     });
 
     player.on("trackAdd", (queue, track) => {
-        queue.metadata.send(`🎶 | Track **${track.title}** queued!`);
+        queue.metadata.send(`🎶 | Track **${track.title}** queued!\n:warning: Tunez is reaching end of life, learn more at <https://tunez.ml/eol>`);
     });
 
     player.on("botDisconnect", (queue) => {
