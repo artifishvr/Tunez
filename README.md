@@ -1,5 +1,5 @@
-# Tunez is reaching end of life
-## Learn more at <a href="https://tunez.ml/eol">tunez.ml/eol</a>
+# Tunez has reached end of life, and this repository is now archived.
+## Check out [NerdyTechy/Melody](https://github.com/NerdyTechy/Melody) for a better & maintained music bot.
 
 
 <div id="top"></div>
